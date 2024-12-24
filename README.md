@@ -18,17 +18,10 @@ Mocky is a simple OpenAPI Mock Server to simulate API responses based on OpenAPI
     cd mocky
     ```
 
-2. Create and activate a virtual environment:
+2. Install the package:
 
     ```sh
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
-
-3. Install the dependencies:
-
-    ```sh
-    pip install -r requirements.txt
+    pip install .
     ```
 
 ## Usage
@@ -36,7 +29,7 @@ Mocky is a simple OpenAPI Mock Server to simulate API responses based on OpenAPI
 1. Run the Mocky server:
 
     ```sh
-    python src/main.py --file openapi.yaml --port 8080 --host 127.0.0.1
+    mocky --file openapi.yaml --port 8080 --host 127.0.0.1
     ```
 
     You can specify the path to the OpenAPI specification file using the `--file` argument. The server will listen on the specified host and port. The `--debug` flag is optional and enables debug mode, which provides more detailed logging for troubleshooting.
@@ -53,7 +46,27 @@ Mocky is a simple OpenAPI Mock Server to simulate API responses based on OpenAPI
 To enable OpenTelemetry metrics collection, use the `--otel` flag when running the server:
 
 ```sh
-python src/main.py --file openapi.yaml --port 8080 --host 127.0.0.1 --debug --otel
+mocky --file openapi.yaml --port 8080 --host 127.0.0.1 --debug --otel
 ```
 
-The `--otel` flag enables OpenTelemetry metrics collection, allowing you to monitor and observe the performance and behavior of the Mocky server. When this flag is used, the server will automatically start collecting and exporting metrics to the configured OpenTelemetry backend.
+## Testing
+
+To run the tests, use pytest:
+
+    ```sh
+    pytest
+    ```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+### Acknowledgements
+
+- Flask
+- OpenTelemetry
+- Swagger

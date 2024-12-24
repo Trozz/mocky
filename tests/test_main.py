@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 import argparse
 from flask import Flask
-from src.main import MockyApp
+from mocky.main import MockyApp
 
 
 # Base class to hold common logic
@@ -68,7 +68,7 @@ class TestMockyApp(BaseMockyAppTest):
         for file in ["openapi.yaml"]:
             with self.subTest(file=file):
                 self.initialize_app(file)
-                with patch("src.main.MockyApp._parse_openapi") as mock_parse_openapi:
+                with patch("mocky.main.MockyApp._parse_openapi") as mock_parse_openapi:
                     mock_parse_openapi.return_value = {
                         "paths": {
                             "/test": {
