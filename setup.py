@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "Flask==3.1.0",
+        "Flask==3.1.1",
         "opentelemetry-api==1.29.0",
         "opentelemetry-instrumentation",
         "opentelemetry-instrumentation-flask",
